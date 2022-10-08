@@ -1,26 +1,26 @@
-#include <bits/stdc++.h>
+#include <iostream>
 using namespace std;
 
-int findSingle(int arr[], int n)
-{
-    // Do XOR of all elements and return
-    // Xor of duplicates yields 0
-    int res = arr[0];
-    for (int i = 1; i < n; i++)
-        res = res ^ arr[i];
-
-    return res;
-}
 
 int main()
 {
-    int n;
-    cout << "Enter the size of array  ";
-    cin >> n;
-    int arr[n];
-    cout << "Enter elements of array :" << endl;
-    for (int i = 0; i < n; i++)
-        cin >> arr[i];
-    cout << "Element occurring once is " << findSingle(arr, n);
-    return 0;
+    int array1[] = {1, 5, 7, 5, 8, 9, 11, 11, 2, 5, 6};
+    int s1 = sizeof(array1)/sizeof(array1[0]);
+
+    cout << "Original array: ";
+    
+    for (int i=0; i < s1; i++) 
+    cout << array1[i] <<" ";
+    
+    cout <<"\nUnique elements of the said array: ";
+    for (int i=0; i<s1; i++)
+    {
+        int j;
+        for (j=0; j<i; j++)
+           if (array1[i] == array1[j])
+               break;
+         if (i == j)
+          cout << array1[i] << " ";
+    }
+    return 0; 
 }
